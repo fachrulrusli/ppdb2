@@ -1,0 +1,68 @@
+/* cabin-condensed-regular - latin */
+@font-face {
+  /*font-family: 'Cabin Condensed';*/
+  /*font-style: normal;*/
+  /*font-weight: 400;*/
+  /*src: url('./fonts/cabin-condensed-v9-latin-regular.eot'); !* IE9 Compat Modes *!*/
+  /*src: local('Cabin Condensed'), local('CabinCondensed-Regular'),*/
+       /*url('./fonts/cabin-condensed-v9-latin-regular.eot?#iefix') format('embedded-opentype'), !* IE6-IE8 *!*/
+       /*url('./fonts/cabin-condensed-v9-latin-regular.woff2') format('woff2'), !* Super Modern Browsers *!*/
+       /*url('./fonts/cabin-condensed-v9-latin-regular.woff') format('woff'), !* Modern Browsers *!*/
+       /*url('./fonts/cabin-condensed-v9-latin-regular.ttf') format('truetype'), !* Safari, Android, iOS *!*/
+       /*url('./fonts/cabin-condensed-v9-latin-regular.svg#CabinCondensed') format('svg'); !* Legacy iOS *!*/
+}
+.login-logo{font-size:35px;text-align:center;margin-bottom:25px;font-weight:300}
+.page-footer{color:#ffffff !important;}
+.page-footer a{color:#ff8d07}
+.top{float:right !important;}
+.toolbar{float:left !important;}
+.text-confirm {
+    cursor:pointer;
+    color:red;
+}
+.portlet.light .dataTables_wrapper .dt-buttons {
+    margin-top: 3px !important;
+    float: left !important;
+}
+.page-header.navbar .page-logo .logo-default{
+	margin: 13px 25px 0 !important;
+}
+.form-group.form-md-line-input.form-md-floating-label .form-control ~ label {
+    color: #999;
+    font-size: 13px !important;
+    top: 25px;
+    transition: all 0.2s ease 0s;
+}
+
+.al-Right {text-align: right}
+.al-Center {text-align: center}
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {  vertical-align: middle !important;}
+.select2 {
+    width: 100% !important;
+}
+.no-footer{border-bottom: none !important;}
+.form-control, .select2-container--bootstrap, .select2-selection, .datepicker {border-radius: 0 !important;-webkit-border-radius:0 !important;-moz-border-radius: 0 !important;}
+.table.dataTable {border-collapse: collapse !important}
+.dataTables_wrapper .dataTables_paginate .paginate_button {display: inherit !important;padding: inherit !important;border: none !important}
+.dataTables_extended_wrapper div.dataTables_paginate {float: right !important}
+.pagination {margin: 0 !important}
+.dataTables_wrapper thead tr{font-size: 16px !important;}
+.dropdown-menu, .dropdown-menu{font-family: inherit !important;}
+.login{background-color: rgba(59, 84, 102, 0) !important;}
+.login .content {
+    background-color: #fff!important;}
+
+.scrollbar
+{
+    height: 95%!important;
+    overflow-y: scroll!important;
+}
+/*span.select2-container {*/
+    /*z-index:10050 !important;*/
+/*}*/
+/*.page-sidebar{*/
+    /*z-index: 9000000;*/
+/*}*/
+/*.page-sidebar{*/
+    /*z-index: 9000000;*/
+/*}*/

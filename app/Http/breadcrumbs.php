@@ -1,0 +1,707 @@
+<?php
+
+// Home
+Breadcrumbs::register('home', function($breadcrumbs)
+{
+    $breadcrumbs->push(trans('breadcrumbs.home.title'));
+});
+Breadcrumbs::register('admin', function($breadcrumbs)
+{
+    $breadcrumbs->push(trans('breadcrumbs.admin.title'));
+});
+Breadcrumbs::register('add', function($breadcrumbs)
+{
+    $breadcrumbs->push(trans('breadcrumbs.global.add'));
+});
+Breadcrumbs::register('edit', function($breadcrumbs)
+{
+    $breadcrumbs->push(trans('breadcrumbs.global.edit'));
+});
+Breadcrumbs::register('dashboard',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.dashboard.title'));
+});
+
+Breadcrumbs::register('province',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.province.title'));
+});
+Breadcrumbs::register('new_province',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.province.title'));
+});
+Breadcrumbs::register('edit_province',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.province.title'));
+});
+Breadcrumbs::register('user',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->push(trans('breadcrumbs.user.title'));
+});
+Breadcrumbs::register('new_user',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.user.title'));
+});
+Breadcrumbs::register('city',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.city.title'),route('city'));
+});
+Breadcrumbs::register('menu',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.menu.title'),route('menu'));
+});
+Breadcrumbs::register('group',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.group.title'),route('group'));
+});
+Breadcrumbs::register('addcity',function($breadcrumbs)
+{
+    $breadcrumbs->parent('city');
+    $breadcrumbs->push(trans('breadcrumbs.city.addtitle'));
+});
+Breadcrumbs::register('new_menu',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.menu.title'));
+});
+Breadcrumbs::register('editcity',function($breadcrumbs)
+{
+    $breadcrumbs->parent('city');
+    $breadcrumbs->push(trans('breadcrumbs.city.edittitle'));
+});
+Breadcrumbs::register('edit_user',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.user.title'));
+});
+Breadcrumbs::register('edit_menu',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.menu.title'));
+});
+Breadcrumbs::register('branch',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->push(trans('breadcrumbs.branch.title'));
+});
+Breadcrumbs::register('akses',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.akses.title'), route('akses'));
+});
+Breadcrumbs::register('new_branch',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.branch.title'));
+});
+Breadcrumbs::register('edit_branch',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.branch.title'));
+});
+Breadcrumbs::register('akses_user',function($breadcrumbs)
+{
+
+    $breadcrumbs->parent('user');
+    $breadcrumbs->push(trans('breadcrumbs.akses.title'));
+});
+Breadcrumbs::register('menu_user',function($breadcrumbs)
+{
+
+    $breadcrumbs->parent('user');
+    $breadcrumbs->push(trans('breadcrumbs.menu.title'));
+});
+Breadcrumbs::register('new_group',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.group.title'));
+});
+Breadcrumbs::register('edit_group',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('admin');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.group.title'));
+});
+Breadcrumbs::register('add_akses',function($breadcrumbs)
+{
+    $breadcrumbs->parent('akses');
+    $breadcrumbs->push(trans('breadcrumbs.akses.addtitle'));
+});
+Breadcrumbs::register('edit_akses',function($breadcrumbs)
+{
+    $breadcrumbs->parent('akses');
+    $breadcrumbs->push(trans('breadcrumbs.akses.edittitle'));
+});
+Breadcrumbs::register('akses_group',function($breadcrumbs)
+{
+    $breadcrumbs->parent('group');
+    $breadcrumbs->push(trans('breadcrumbs.akses.title'));
+});
+Breadcrumbs::register('menu_group',function($breadcrumbs)
+{
+    $breadcrumbs->parent('group');
+    $breadcrumbs->push(trans('breadcrumbs.menu.title'));
+});
+Breadcrumbs::register('report_group',function($breadcrumbs)
+{
+    $breadcrumbs->parent('group');
+    $breadcrumbs->push(trans('view.group.report'));
+});
+Breadcrumbs::register('bank',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.bank.title'), route('bank'));
+});
+Breadcrumbs::register('new_bank',function($breadcrumbs)
+{
+    $breadcrumbs->parent('bank');
+    $breadcrumbs->push(trans('breadcrumbs.bank.add'));
+});
+Breadcrumbs::register('edit_bank',function($breadcrumbs)
+{
+    $breadcrumbs->parent('bank');
+    $breadcrumbs->push(trans('breadcrumbs.bank.edit'));
+});
+Breadcrumbs::register('ref',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.ref.title'), route('reference'));
+});
+Breadcrumbs::register('ref_add',function($breadcrumbs)
+{
+    $breadcrumbs->parent('ref');
+    $breadcrumbs->push(trans('breadcrumbs.ref.add'));
+});
+Breadcrumbs::register('ref_edit',function($breadcrumbs)
+{
+    $breadcrumbs->parent('ref');
+    $breadcrumbs->push(trans('breadcrumbs.ref.edit'));
+});
+//Report
+Breadcrumbs::register('system',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.sistem.title'));
+});
+Breadcrumbs::register('report',function($breadcrumbs)
+{
+    $breadcrumbs->parent('system');
+    $breadcrumbs->push(trans('breadcrumbs.sistem.report.title'));
+});
+
+Breadcrumbs::register('kodetransaksi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.kodetransaksi.title'));
+});
+Breadcrumbs::register('new_kdtrans',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('kodetransaksi');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.kodetransaksi.title'));
+});
+Breadcrumbs::register('edit_kdtrans',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('kodetransaksi');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.kodetransaksi.title'));
+});
+
+
+Breadcrumbs::register('instansi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.instansi.title'));
+});
+Breadcrumbs::register('new_instansi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('instansi');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.instansi.title'));
+});
+Breadcrumbs::register('edit_instansi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('instansi');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.instansi.title'));
+});
+Breadcrumbs::register('harilibur',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.harilibur.title'));
+});
+Breadcrumbs::register('accountofficer',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.accountofficer.title'));
+});
+Breadcrumbs::register('new_accountofficer',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('accountofficer');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.accountofficer.title'));
+});
+Breadcrumbs::register('edit_accountofficer',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('accountofficer');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.accountofficer.title'));
+});
+Breadcrumbs::register('grouptransaksi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.grouptransaksi.title'));
+});
+
+Breadcrumbs::register('groupsubledger',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.groupsubledger.title'));
+});
+
+Breadcrumbs::register('groupsandibi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.groupsandibi.title'));
+});
+Breadcrumbs::register('tablesandibi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.tablesandibi.title'));
+});
+Breadcrumbs::register('new_tablesandibi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tablesandibi');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.tablesandibi.title'));
+});
+Breadcrumbs::register('edit_tablesandibi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tablesandibi');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.tablesandibi.title'));
+});
+
+Breadcrumbs::register('kodepos',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.kodepos.title'));
+});
+Breadcrumbs::register('new_kodepos',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('kodepos');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.kodepos.title'));
+});
+Breadcrumbs::register('edit_kodepos',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('kodepos');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.kodepos.title'));
+});
+Breadcrumbs::register('jeniskendaraan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.jeniskendaraan.title'));
+});
+Breadcrumbs::register('merkkendaraan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.merkkendaraan.title'));
+});
+Breadcrumbs::register('tipekendaraan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.tipekendaraan.title'));
+});
+Breadcrumbs::register('new_tipekendaraan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tipekendaraan');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.tipekendaraan.title'));
+});
+Breadcrumbs::register('edit_tipekendaraan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tipekendaraan');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.tipekendaraan.title'));
+});
+Breadcrumbs::register('dealerkendaraan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.dealerkendaraan.title'));
+});
+
+Breadcrumbs::register('bankkerjasama',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.bankkerjasama.title'));
+});
+Breadcrumbs::register('new_bankkerjasama',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('bankkerjasama');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.bankkerjasama.title'));
+});
+Breadcrumbs::register('edit_bankkerjasama',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('bankkerjasama');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.bankkerjasama.title'));
+});
+Breadcrumbs::register('standbylimit',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.standbylimit.title'));
+});
+Breadcrumbs::register('pengikatan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.pengikatan.title'));
+});
+Breadcrumbs::register('bankstandinginstruction',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.bankstandinginstruction.title'));
+});
+Breadcrumbs::register('new_bankstandinginstruction',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('bankstandinginstruction');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.bankstandinginstruction.title'));
+});
+Breadcrumbs::register('edit_bankstandinginstruction',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('bankstandinginstruction');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.bankstandinginstruction.title'));
+});
+Breadcrumbs::register('alasan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.alasan.title'));
+});
+Breadcrumbs::register('kantorkas',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.kantorkas.title'));
+});
+Breadcrumbs::register('tablenotaris',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.tablenotaris.title'));
+});
+Breadcrumbs::register('new_tablenotaris',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tablenotaris');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.tablenotaris.title'));
+});
+Breadcrumbs::register('edit_tablenotaris',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tablenotaris');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.tablenotaris.title'));
+});
+
+Breadcrumbs::register('asuransi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.asuransi.title'));
+});
+Breadcrumbs::register('new_asuransi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('asuransi');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.asuransi.title'));
+});
+Breadcrumbs::register('edit_asuransi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('asuransi');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.asuransi.title'));
+});
+
+Breadcrumbs::register('tablecabang',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.tablecabang.title'));
+});
+Breadcrumbs::register('new_tablecabang',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tablecabang');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.tablecabang.title'));
+});
+Breadcrumbs::register('edit_tablecabang',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('tablecabang');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.tablecabang.title'));
+});
+
+
+Breadcrumbs::register('setupteller',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.setupteller.title'));
+});
+Breadcrumbs::register('new_setupteller',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('setupteller');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.setupteller.title'));
+});
+Breadcrumbs::register('edit_setupteller',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('setupteller');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.setupteller.title'));
+});
+
+Breadcrumbs::register('datapribadi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.datapribadi.title'));
+});
+
+Breadcrumbs::register('kyw-datapribadi',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.kyw-datapribadi.title'));
+});
+
+Breadcrumbs::register('slipgaji',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.slipgaji.title'));
+});
+
+Breadcrumbs::register('plafonhealth',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.plafonhealth.title'));
+});
+
+Breadcrumbs::register('cutitahunan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.cutitahunan.title'));
+});
+
+Breadcrumbs::register('kyw-penilaian',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.kyw-penilaian.title'));
+});
+
+
+Breadcrumbs::register('hrd', function($breadcrumbs)
+{
+    $breadcrumbs->push(trans('HRD'));
+});
+Breadcrumbs::register('gajikoin',function($breadcrumbs)
+{
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->push('Penggajian Koin',route('hrd-gaji-koin'));
+});
+
+Breadcrumbs::register('psdm', function($breadcrumbs)
+{
+    $breadcrumbs->push(trans('PSDM'));
+});
+Breadcrumbs::register('settingpenilaian',function($breadcrumbs)
+{
+    $breadcrumbs->parent('psdm');
+    $breadcrumbs->push('Setting Penilaian',route('settingpenilaian'));
+});
+Breadcrumbs::register('pertanyaanpenilaian',function($breadcrumbs)
+{
+    $breadcrumbs->parent('psdm');
+    $breadcrumbs->push('Pertanyaan Penilaian',route('pertanyaan'));
+});
+Breadcrumbs::register('new_pertanyaan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('psdm');
+    $breadcrumbs->parent('pertanyaanpenilaian');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.pertanyaan.title'));
+});
+Breadcrumbs::register('edit_pertanyaan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('pertanyaanpenilaian');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.pertanyaan.title'));
+});
+Breadcrumbs::register('spsw',function($breadcrumbs) {
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->push('Transaksi SPSW', route('hrd-spsw'));
+});
+
+Breadcrumbs::register('datakaryawan',function($breadcrumbs) {
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->push(trans('breadcrumbs.datakaryawan.title'));
+});
+Breadcrumbs::register('new_datakaryawan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->parent('datakaryawan');
+    $breadcrumbs->parent('add');
+    $breadcrumbs->push(trans('breadcrumbs.datakaryawan.title'));
+});
+Breadcrumbs::register('edit_datakaryawan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->parent('datakaryawan');
+    $breadcrumbs->parent('edit');
+    $breadcrumbs->push(trans('breadcrumbs.datakaryawan.title'));
+});
+Breadcrumbs::register('direktorat',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.direktorat.title'), route('direktorat'));
+});
+Breadcrumbs::register('departemen',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.departemen.title'), route('departemen'));
+});
+
+Breadcrumbs::register('subdepartemen',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.subdepartemen.title'), route('subdepartemen'));
+});
+
+Breadcrumbs::register('jabatan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.jabatan.title'), route('jabatan'));
+});
+
+Breadcrumbs::register('cuti',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.cuti.title'), route('cuti'));
+});
+
+Breadcrumbs::register('libur',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.libur.title'), route('libur'));
+});
+
+Breadcrumbs::register('ramadhan',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.ramadhan.title'), route('ramadhan'));
+});
+
+Breadcrumbs::register('pinjaman',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.pinjaman.title'), route('pinjaman'));
+});
+
+Breadcrumbs::register('kasbon',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.kasbon.title'), route('kasbon'));
+});
+
+Breadcrumbs::register('pinjamanlain',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.pinjamanlain.title'), route('pinjamanlain'));
+});
+
+Breadcrumbs::register('absen',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.absen.title'), route('monitorabsen'));
+});
+
+Breadcrumbs::register('lembur',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.lembur.title'), route('lembur'));
+});
+
+Breadcrumbs::register('representatif',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.representatif.title'), route('lembur'));
+});
+Breadcrumbs::register('voucher',function($breadcrumbs)
+{
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->push('Potongan Voucher',route('hrd-gaji-potvoc'));
+});
+Breadcrumbs::register('pengecualiangaji',function($breadcrumbs)
+{
+    $breadcrumbs->parent('hrd');
+    $breadcrumbs->push('Pengecualian Gaji',route('hrd-pengecualian-gaji'));
+});
+Breadcrumbs::register('jamkerja',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.jamkerja.title'), route('jamkerja'));
+});
+Breadcrumbs::register('coapenggajian',function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.coapenggajian.title'), route('coapenggajian'));
+});
